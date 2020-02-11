@@ -12,7 +12,7 @@
         android:layout_width="472dp"
         android:layout_height="745dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
@@ -34,7 +34,7 @@
 
             <EditText
                 android:id="@+id/TextTitre"
-                android:layout_width="295dp"
+                android:layout_width="355dp"
                 android:layout_height="wrap_content"
                 android:hint="titre"
                 android:inputType="" />
@@ -53,14 +53,14 @@
 
         <EditText
             android:id="@+id/TextNumberBalls"
-            android:layout_width="426dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
             android:hint="Montant"
             android:inputType="numberDecimal" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="63dp" />
+            android:layout_height="44dp" />
 
         <EditText
             android:id="@+id/editTextDate"
@@ -89,7 +89,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="58dp" />
+            android:layout_height="34dp" />
 
         <TextView
             android:id="@+id/payFor"
@@ -104,10 +104,16 @@
             android:layout_height="wrap_content"
             android:hint="Pour qui" />
 
+        <Button
+            android:id="@+id/buttonValider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valider" />
+
         <com.google.android.gms.maps.MapView
             android:id="@+id/mapView"
             android:layout_width="match_parent"
-            android:layout_height="67dp" />
+            android:layout_height="177dp" />
 
 
     </LinearLayout>
