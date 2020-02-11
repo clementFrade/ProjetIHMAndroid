@@ -3,7 +3,7 @@ package com.example.projetandroid;
 import java.util.ArrayList;
 
 public class Group {
-    
+
     private String name;
     private String user;
     private ArrayList<String> colaborators;
