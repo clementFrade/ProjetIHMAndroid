@@ -9,6 +9,38 @@ public class Group {
     private ArrayList<String> colaborators;
     private ArrayList<Transaction> list_transaction;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public ArrayList<String> getColaborators() {
+        return colaborators;
+    }
+
+    public void setColaborators(ArrayList<String> colaborators) {
+        this.colaborators = colaborators;
+    }
+
+    public ArrayList<Transaction> getList_transaction() {
+        return list_transaction;
+    }
+
+    public void setList_transaction(ArrayList<Transaction> list_transaction) {
+        this.list_transaction = list_transaction;
+    }
+
     public Group(String name, String user, ArrayList<String> colaborators) {
         this.name = name;
         this.user = user;
