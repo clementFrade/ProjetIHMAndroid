@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProjetAndroid</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_creating_group">Settings</string>
+    <string name="title_activity_creating_group">Création de groupe</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -17,4 +17,15 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- String used by creating_group -->
+    <string name="group_name_prompt">Nom du groupe</string>
+    <string name="group_description_prompt">Description</string>
+    <string name="group_devise_name">Devise</string>
+    <string name="group_devise_prompt">Veuillez choisir la devise à utiliser</string>
+    <string name="validation_button_prompt">Valider</string>
+    <string name="guest_name_prompt">Nom</string>
+    <string name="add_button_prompt">Ajouter un invité</string>
+
+    <string name="back_arrow">Retour en arrière</string>
 </resources>

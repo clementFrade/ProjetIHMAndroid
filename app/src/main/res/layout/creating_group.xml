@@ -6,41 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-
-            app:toolbarId="@+id/toolbar">
-
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="left"
-                android:background="#009688"
-                android:foregroundGravity="left"
-                android:tint="#FDFDFD"
-                android:visibility="visible"
-                app:srcCompat="@android:drawable/ic_menu_revert" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#009688"
-                android:visibility="invisible"></androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,90 +22,76 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <FrameLayout
-                    android:id="@+id/settings"
+                <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ScrollView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp" />
+
+                        <EditText
+                            android:id="@+id/inputName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/group_name_prompt"
+                            android:inputType="textShortMessage"
+                            android:importantForAutofill="no"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp" />
+
+                        <EditText
+                            android:id="@+id/inputDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:hint="@string/group_description_prompt"
+                            android:inputType="textShortMessage"
+                            android:importantForAutofill="no"/>
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp" />
+
+                        <TextView
+                            android:id="@+id/devise"
+                            android:layout_width="match_parent"
+                            android:layout_height="37dp"
+                            android:text="@string/group_devise_name" />
+
+                        <Spinner
+                            android:id="@+id/inputDevise"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:entries="@array/devise_entries"
+                            android:prompt="@string/group_devise_prompt"
+                            android:spinnerMode="dropdown"
+                            android:visibility="visible" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp" />
+
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="56dp" />
-
-                            <TextView
-                                android:id="@+id/name"
-                                android:layout_width="match_parent"
-                                android:layout_height="37dp"
-                                android:text="Nom du groupe" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/inputName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="hint" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp" />
-
-                            <TextView
-                                android:id="@+id/description"
-                                android:layout_width="match_parent"
-                                android:layout_height="37dp"
-                                android:text="Description" />
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/inputDescription"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="53dp"
-                                    android:hint="hint" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="25dp" />
-
-                            <TextView
-                                android:id="@+id/devise"
-                                android:layout_width="match_parent"
-                                android:layout_height="37dp"
-                                android:text="Devise" />
-
-                            <Spinner
-                                android:id="@+id/inputDevise"
-                                android:layout_width="match_parent"
-                                android:layout_height="45dp" />
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="23dp" />
-
-                            <View
-                                android:id="@+id/divider"
-                                android:layout_width="match_parent"
-                                android:layout_height="37dp"
-                                android:background="?android:attr/listDivider" />
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="22dp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -148,27 +99,33 @@
                                 android:orientation="horizontal">
 
                                 <EditText
-                                    android:id="@+id/editText2"
+                                    android:id="@+id/personne1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:ems="10"
                                     android:inputType="textPersonName"
-                                    android:text="Name" />
+                                    android:text="@string/guest_name_prompt" />
 
                                 <Button
-                                    android:id="@+id/button"
+                                    android:id="@+id/addButton"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:text="Button" />
+                                    android:text="@string/add_button_prompt" />
                             </LinearLayout>
-
                         </LinearLayout>
-                    </ScrollView>
-                </FrameLayout>
-            </LinearLayout>
 
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/validation_button_prompt" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
