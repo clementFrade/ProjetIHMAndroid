@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textViewTitre"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal"
@@ -52,7 +52,7 @@
             android:layout_height="56dp" />
 
         <EditText
-            android:id="@+id/TextNumberBalls"
+            android:id="@+id/TextMontant"
             android:layout_width="match_parent"
             android:layout_height="82dp"
             android:hint="Montant"
