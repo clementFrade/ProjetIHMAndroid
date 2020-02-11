@@ -12,10 +12,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Layout;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         list_colabo.add("clement");
         list_group.add(new Group("yolo","lulu",list_colabo));
+        list_group.add(new Group("c'est parti","lulu",list_colabo));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
         String user = com.example.projetandroid.ui.login.LoginActivity.getUser();
         final TextView helloTextView = (TextView) findViewById(R.id.textView2);
         helloTextView.setText("Bienvenue " + user);
+
+        final LinearLayout layout_list = (LinearLayout) findViewById(R.id.layoutGroup);
+        layout_list.removeAllViewsInLayout();
+
+        for (int i=0;i<list_group.size();i++){
+            Button list_button = new Button(this);
+            list_button.setText(list_group.get(i).getName());
+            layout_list.addView(list_button);
+        }
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
