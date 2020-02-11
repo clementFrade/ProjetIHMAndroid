@@ -3,6 +3,7 @@ package com.example.projetandroid;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.projetandroid.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -12,6 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        String user = com.example.projetandroid.ui.login.LoginActivity.getUser();
+        final TextView helloTextView = (TextView) findViewById(R.id.textView2);
+        helloTextView.setText("Bienvenue " + user);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Intent LoginActivity = new Intent(MainActivity.this, com.example.projetandroid.ui.login.LoginActivity.class);
+            startActivity(LoginActivity);
         }
 
         return super.onOptionsItemSelected(item);
