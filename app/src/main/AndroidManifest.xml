@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".CreatingGroup"
+            android:label="@string/title_activity_creating_group">
+        </activity>
+        <activity
             android:name=".EquilibreActivity"
             android:label="@string/title_activity_equilibre"
             android:theme="@style/AppTheme.NoActionBar"></activity>
