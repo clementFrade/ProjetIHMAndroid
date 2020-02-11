@@ -11,10 +11,15 @@ import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.sql.Date;
+import java.util.ArrayList;
+
 
 public class DetailTransactionActivity extends AppCompatActivity {
     private TextView mTitrePrincipal;
@@ -24,11 +29,12 @@ public class DetailTransactionActivity extends AppCompatActivity {
     private Spinner mPayeur;
     private Spinner mPaye;
     private Button mPlayButton;
-    public String date;
-    public String montant;
-    public String titre;
-    public String payeur;
-    public String paye;
+    private String date;
+    private String montant;
+    private String titre;
+    private String payeur;
+    private ArrayList<String> paye;
+    private ArrayList<Transaction>list_transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,28 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mPaye = (Spinner) findViewById(R.id.Payé);
         mPlayButton = (Button) findViewById(R.id.buttonValider);
         mPlayButton.setEnabled(false);
+        mPayeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        mPaye.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         mTitreTransaction.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -99,8 +127,8 @@ public class DetailTransactionActivity extends AppCompatActivity {
                 date=mDate.getText().toString();
                 montant=mMontant.getText().toString();
                 titre=mTitreTransaction.getText().toString();
-                
-
+                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), Date.valueOf(date),payeur,paye);
+                list_transaction.add(transaction);
                 // The user just clicked
             }
         });

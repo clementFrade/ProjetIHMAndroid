@@ -51,12 +51,12 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="67dp" />
 
         <TextView
             android:id="@+id/Balance"
             android:layout_width="428dp"
-            android:layout_height="456dp"
+            android:layout_height="150dp"
             android:gravity="center"
             android:minHeight="?actionBarSize"
             android:padding="@dimen/appbar_padding"
@@ -70,10 +70,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="263dp" />
+
         <Button
             android:id="@+id/Detail"
             android:layout_width="411dp"
-            android:layout_height="58dp"
+            android:layout_height="87dp"
             android:layout_gravity="bottom"
             android:gravity="center"
             android:text="Equilibre" />
