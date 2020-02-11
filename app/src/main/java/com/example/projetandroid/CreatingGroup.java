@@ -4,7 +4,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceFragmentCompat;
+
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.Button;
 
 public class CreatingGroup extends AppCompatActivity {
 
@@ -20,6 +24,17 @@ public class CreatingGroup extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    public void onClickAddButton(View v){
+        LinearLayout addLayout = findViewById(R.id.addingLayout);
+        LinearLayout  hLayoutx = new LinearLayout(this);
+        EditText newPerson = new EditText(this);
+        
+    }
+
+    public void onClickValidateButton(View v){
+
     }
 
     /*public static class SettingsFragment extends PreferenceFragmentCompat {

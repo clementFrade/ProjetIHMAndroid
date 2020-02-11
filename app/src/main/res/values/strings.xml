@@ -25,7 +25,8 @@
     <string name="group_devise_prompt">Veuillez choisir la devise à utiliser</string>
     <string name="validation_button_prompt">Valider</string>
     <string name="guest_name_prompt">Nom</string>
-    <string name="add_button_prompt">Ajouter un invité</string>
+    <string name="add_button_prompt">Ajouter l\'invité</string>
+    <string name="del_button_prompt">Retirer l\'invité</string>
 
     <string name="back_arrow">Retour en arrière</string>
 </resources>
