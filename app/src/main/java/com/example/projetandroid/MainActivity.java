@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent LoginActivity = new Intent(MainActivity.this, com.example.projetandroid.ui.login.LoginActivity.class);
+                Intent LoginActivity = new Intent(MainActivity.this, com.example.projetandroid.DetailTransactionActivity.class);
                 startActivity(LoginActivity);
             }
         });

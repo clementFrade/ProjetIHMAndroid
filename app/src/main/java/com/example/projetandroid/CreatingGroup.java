@@ -16,10 +16,6 @@ public class CreatingGroup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creating_group);
-        /*getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.settings, new SettingsFragment())
-                .commit();*/
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
