@@ -34,8 +34,8 @@ public class DetailTransactionActivity extends AppCompatActivity {
     private String payeur;
     private ArrayList<String> paye;
     private ArrayList<Transaction>list_transaction;
-    private ArrayList<Colaborator>liste_colaborator;
-    private ArrayList<String> payer;
+    private ArrayList<Colaborator>liste_colaborator=new ArrayList<Colaborator>();
+    private ArrayList<String> payer=new ArrayList<String>();
 
 
     @Override
@@ -45,7 +45,7 @@ public class DetailTransactionActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //mTitrePrincipal = (TextView) findViewById(R.id.activity_main_greeting_txt);
+        mTitrePrincipal = (TextView) findViewById(R.id.textViewTitre);
         mTitreTransaction = (EditText) findViewById(R.id.TextTitre);
         mMontant = (EditText) findViewById(R.id.TextMontant);
         mDate = (EditText) findViewById(R.id.editTextDate);
@@ -54,16 +54,27 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mPlayButton = (Button) findViewById(R.id.buttonValider);
         mPlayButton.setEnabled(false);
         Spinner spin = (Spinner) findViewById(R.id.Payed);
+        Spinner spin2 = (Spinner) findViewById(R.id.Payeur);
         ArrayAdapter<String> adapter ;
-/*
-        liste_colaborator = TransactionGroupActivity.getGrp().getColaborators();
-        for (Colaborator c:liste_colaborator) {
-            paye.add(c.getName());
+        /*Colaborator Clement = new Colaborator("clement");
+        Colaborator Lucas = new Colaborator("lucas");
+        Colaborator Thibaud = new Colaborator("thibaud");
+        liste_colaborator.add(Clement);
+        liste_colaborator.add(Lucas);
+        liste_colaborator.add(Thibaud);*/
+       liste_colaborator = TransactionGroupActivity.getGrp().getColaborators();
+        /*for (Colaborator c:liste_colaborator) {
+            payer.add(c.getName());
+        }*/
+
+        for (int i=0;i<liste_colaborator.size();i++) {
+            payer.add(liste_colaborator.get(i).getName());
         }
 
-        adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,paye);
+        adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,payer);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(adapter);*/
+        spin.setAdapter(adapter);
+        spin2.setAdapter(adapter);
         mPayeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
