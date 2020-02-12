@@ -8,6 +8,7 @@ public class Group {
     private String user;
     private ArrayList<Colaborator> colaborators;
     private ArrayList<Transaction> list_transaction;
+    private String devise;
 
     public String getName() {
         return name;
@@ -41,16 +42,18 @@ public class Group {
         this.list_transaction = list_transaction;
     }
 
-    public Group(String name, String user, ArrayList<Colaborator> colaborators) {
+    public Group(String name, String user,String devise, ArrayList<Colaborator> colaborators) {
         this.name = name;
         this.user = user;
+        this.devise=devise;
         this.colaborators = colaborators;
         this.list_transaction = new ArrayList<Transaction>();
     }
 
-    public Group(String name, String user, ArrayList<Colaborator> colaborators, ArrayList<Transaction> list_transaction) {
+    public Group(String name, String user,String devise, ArrayList<Colaborator> colaborators, ArrayList<Transaction> list_transaction) {
         this.name = name;
         this.user = user;
+        this.devise=devise;
         this.colaborators = colaborators;
         this.list_transaction = list_transaction;
     }
