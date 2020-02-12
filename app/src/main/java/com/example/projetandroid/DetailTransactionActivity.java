@@ -11,7 +11,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
@@ -54,7 +56,6 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mPlayButton = (Button) findViewById(R.id.buttonValider);
         mPlayButton.setEnabled(false);
         Spinner spin = (Spinner) findViewById(R.id.Payed);
-        Spinner spin2 = (Spinner) findViewById(R.id.Payeur);
         ArrayAdapter<String> adapter ;
         /*Colaborator Clement = new Colaborator("clement");
         Colaborator Lucas = new Colaborator("lucas");
@@ -74,7 +75,14 @@ public class DetailTransactionActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,payer);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
-        spin2.setAdapter(adapter);
+
+        final LinearLayout layout_list = (LinearLayout) findViewById(R.id.ForWhom);
+        layout_list.removeAllViewsInLayout();
+        for (int i=0;i<payer.size();i++){
+            CheckBox box = new CheckBox(this);
+            box.setText(payer.get(i));
+            layout_list.addView(box);
+        }
         mPayeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
