@@ -24,10 +24,6 @@
             android:label="@string/title_activity_detail_transaction"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TransactionSummaryActivity"
-            android:label="@string/title_activity_transaction_summary"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login">
                         <intent-filter>

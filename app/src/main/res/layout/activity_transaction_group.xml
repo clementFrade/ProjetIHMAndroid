@@ -53,14 +53,6 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/Detail"
-            android:layout_width="411dp"
-            android:layout_height="93dp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:text="Equilibre" />
-
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

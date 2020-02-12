@@ -37,11 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static ArrayList<Group> list_group = new ArrayList<Group>();
-    private ArrayList<Colaborator> list_colabo = new ArrayList<Colaborator>();
     private ArrayList<Button> liste = new ArrayList<Button>();
-    private ArrayList<Transaction> liste_transaction = new ArrayList<Transaction>();
-    //list_colabo.add
-    //list_group.add(new Group("yolo","lulu",list_colabo));
+
 
     public static ArrayList<Group> getList_group() {
         return list_group;
@@ -57,19 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Colaborator Clement = new Colaborator("clement");
-        Colaborator Lucas = new Colaborator("lucas");
-        Colaborator Thibaud = new Colaborator("thibaud");
-        list_colabo.add(Clement);
-        list_colabo.add(Lucas);
-        list_colabo.add(Thibaud);
-        Date date = new Date(2019,10,12) ;
-        Transaction test = new Transaction("test",10.0, date.toString(),Clement,list_colabo);
-        Transaction test2 = new Transaction("test2",20.0, date.toString(),Clement,list_colabo);
-        liste_transaction.add(test);
-        liste_transaction.add(test2);
-        list_group.add(new Group("yolo","lulu","eur",list_colabo,liste_transaction));
-        list_group.add(new Group("c'est parti","lulu","eur",list_colabo));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
