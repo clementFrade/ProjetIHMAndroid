@@ -47,6 +47,9 @@ public class TransactionGroupActivity extends AppCompatActivity {
                 id = k;
             }
         }
+        final TextView hello = (TextView) findViewById(R.id.groupName);
+        hello.setText(group + group);
+
         final LinearLayout layout_list = (LinearLayout) findViewById(R.id.transactions);
         layout_list.removeAllViewsInLayout();
 
