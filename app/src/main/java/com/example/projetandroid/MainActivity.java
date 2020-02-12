@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Group> list_group = new ArrayList<Group>();
     private ArrayList<Colaborator> list_colabo = new ArrayList<Colaborator>();
+    private ArrayList<Button> liste = new ArrayList<Button>();
     //list_colabo.add
     //list_group.add(new Group("yolo","lulu",list_colabo));
 
@@ -59,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
             Button list_button = new Button(this);
             list_button.setText(list_group.get(i).getName());
             layout_list.addView(list_button);
+            liste.add(list_button);
+        }
+        for (Button b : liste){
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    
+                }
+            });
         }
 
 
