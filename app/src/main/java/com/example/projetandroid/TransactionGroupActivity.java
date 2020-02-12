@@ -17,6 +17,12 @@ public class TransactionGroupActivity extends AppCompatActivity {
     ArrayList<Transaction> list_trans;
     ArrayList<Colaborator> list_colab;
 
+    private static int id;
+
+    public static int getId() {
+        return id;
+    }
+
     private static Group grp;
     public static Group getGrp() {
         return grp;
@@ -38,6 +44,7 @@ public class TransactionGroupActivity extends AppCompatActivity {
             if (list_group.get(k).getName() == group){
                 grp = list_group.get(k);
                 list_trans = list_group.get(k).getList_transaction();
+                id = k;
             }
         }
         final LinearLayout layout_list = (LinearLayout) findViewById(R.id.transactions);

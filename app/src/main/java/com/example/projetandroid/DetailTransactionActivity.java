@@ -1,5 +1,6 @@
 package com.example.projetandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
@@ -50,11 +53,9 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mMontant = (EditText) findViewById(R.id.TextMontant);
         mDate = (EditText) findViewById(R.id.editTextDate);
         mPayeur = (Spinner) findViewById(R.id.Payeur);
-        mPaye = (Spinner) findViewById(R.id.Payed);
         mPlayButton = (Button) findViewById(R.id.buttonValider);
         mPlayButton.setEnabled(false);
-        Spinner spin = (Spinner) findViewById(R.id.Payed);
-        Spinner spin2 = (Spinner) findViewById(R.id.Payeur);
+        Spinner spin = (Spinner) findViewById(R.id.Payeur);
         ArrayAdapter<String> adapter ;
         /*Colaborator Clement = new Colaborator("clement");
         Colaborator Lucas = new Colaborator("lucas");
@@ -74,22 +75,18 @@ public class DetailTransactionActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,payer);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adapter);
-        spin2.setAdapter(adapter);
+
+        final LinearLayout layout_list = (LinearLayout) findViewById(R.id.ForWhom);
+        layout_list.removeAllViewsInLayout();
+        for (int i=0;i<payer.size();i++){
+            CheckBox box = new CheckBox(this);
+            box.setText(payer.get(i));
+            layout_list.addView(box);
+        }
         mPayeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        mPaye.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                
             }
 
             @Override
@@ -151,12 +148,18 @@ public class DetailTransactionActivity extends AppCompatActivity {
                 date=mDate.getText().toString();
                 montant=mMontant.getText().toString();
                 titre=mTitreTransaction.getText().toString();
+                payeur=mPayeur.getSelectedItem().toString();
                 ArrayList<Colaborator> liste=new ArrayList<Colaborator>();
-                for (String p:paye) {
-                    liste.add(new Colaborator(p));
+                for(int i=0;i<layout_list.getChildCount();i++){
+                    CheckBox box2 = (CheckBox) layout_list.getChildAt(i);
+                    if(box2.isChecked()){
+                        liste.add(new Colaborator(box2.getText().toString()));
+                    }
                 }
-                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), Date.valueOf(date),new Colaborator(payeur),liste);
-                list_transaction.add(transaction);
+                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), date,new Colaborator(payeur),liste);
+                MainActivity.add(transaction, TransactionGroupActivity.getId());
+                Intent transactionSummary = new Intent(DetailTransactionActivity.this, com.example.projetandroid.TransactionGroupActivity.class);
+                startActivity(transactionSummary);
                 // The user just clicked
             }
         });

@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.list_group.add(group);
     }
 
+    public static void add(Transaction transaction, int k) {
+        MainActivity.list_group.get(k).setList_transaction(transaction);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Colaborator Clement = new Colaborator("clement");
@@ -60,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         list_colabo.add(Lucas);
         list_colabo.add(Thibaud);
         Date date = new Date(2019,10,12) ;
-        Transaction test = new Transaction("test",10.0, date,Clement,list_colabo);
-        Transaction test2 = new Transaction("test2",20.0, date,Clement,list_colabo);
+        Transaction test = new Transaction("test",10.0, date.toString(),Clement,list_colabo);
+        Transaction test2 = new Transaction("test2",20.0, date.toString(),Clement,list_colabo);
         liste_transaction.add(test);
         liste_transaction.add(test2);
         list_group.add(new Group("yolo","lulu","eur",list_colabo,liste_transaction));
