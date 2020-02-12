@@ -1,5 +1,6 @@
 package com.example.projetandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -155,8 +156,10 @@ public class DetailTransactionActivity extends AppCompatActivity {
                         liste.add(new Colaborator(box2.getText().toString()));
                     }
                 }
-                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), Date.valueOf(date),new Colaborator(payeur),liste);
+                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), date,new Colaborator(payeur),liste);
                 MainActivity.add(transaction, TransactionGroupActivity.getId());
+                Intent transactionSummary = new Intent(DetailTransactionActivity.this, com.example.projetandroid.TransactionGroupActivity.class);
+                startActivity(transactionSummary);
                 // The user just clicked
             }
         });

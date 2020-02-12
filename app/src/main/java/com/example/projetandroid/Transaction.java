@@ -6,11 +6,11 @@ import java.util.Date;
 public class Transaction {
     private String tittle;
     private Double amount;
-    private Date date;
+    private String date;
     private Colaborator payBy;
     private ArrayList<Colaborator> payFor;
 
-    public Transaction(String tittle, Double amount, Date date, Colaborator payBy, ArrayList<Colaborator> payFor) {
+    public Transaction(String tittle, Double amount, String date, Colaborator payBy, ArrayList<Colaborator> payFor) {
         this.tittle = tittle;
         this.amount = amount;
         this.date = date;
@@ -26,7 +26,7 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -46,7 +46,7 @@ public class Transaction {
         return amount;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
