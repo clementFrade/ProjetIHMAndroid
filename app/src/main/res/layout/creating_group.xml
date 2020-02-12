@@ -106,9 +106,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:ems="10"
-                                    android:inputType="textPersonName"
-                                    android:text="@string/guest_name_prompt"
-                                    android:importantForAutofill="no"/>
+                                    android:hint="@string/guest_name_prompt"
+                                    android:importantForAutofill="no"
+                                    android:inputType="textPersonName" />
 
                                 <Button
                                     android:id="@+id/addButton"

@@ -49,7 +49,7 @@ public class CreatingGroup extends AppCompatActivity {
         newPerson.setText(getResources().getString(R.string.guest_name_prompt));
 
         Button newButton = new Button(this);
-        newButton.setText(prevButton.getText());
+        newButton.setText(getResources().getString(R.string.add_button_prompt));
         newButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +64,24 @@ public class CreatingGroup extends AppCompatActivity {
 
         prevPerson.setEnabled(false);
         prevButton.setText("Retirer l\'invité");
+        prevButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickDelButton(v);
+            }
+        });
+    }
+
+    public void onClickDelButton(View v){
+
+        LinearLayout addingLayout = findViewById(R.id.addingLayout);
+        LinearLayout buttonLayout = (LinearLayout) v.getParent();
+        EditText colabToDel = (EditText) buttonLayout.getChildAt(0);
+        String colab = colabToDel.getText().toString();
+        for(int i = 0 ; i<colaborators.size() ; i++){
+            if(colaborators.get(i)==colab) colaborators.remove(i);break;
+        }
+        addingLayout.removeView(buttonLayout);
     }
 
     public void onClickValidateButton(View v){
