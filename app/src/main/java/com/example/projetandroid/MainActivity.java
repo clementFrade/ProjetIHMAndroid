@@ -66,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    
+                    Intent transactionSummary = new Intent(MainActivity.this, com.example.projetandroid.CreatingGroup.class);
+                    startActivity(transactionSummary);
+
                 }
             });
         }
