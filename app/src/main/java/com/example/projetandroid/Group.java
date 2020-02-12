@@ -14,6 +14,8 @@ public class Group {
         return name;
     }
 
+
+
     public void setName(String name) {
         this.name = name;
     }
@@ -38,8 +40,8 @@ public class Group {
         return list_transaction;
     }
 
-    public void setList_transaction(ArrayList<Transaction> list_transaction) {
-        this.list_transaction = list_transaction;
+    public void setList_transaction(Transaction transaction) {
+        this.list_transaction.add(transaction);
     }
 
     public Group(String name, String user,String devise, ArrayList<Colaborator> colaborators) {

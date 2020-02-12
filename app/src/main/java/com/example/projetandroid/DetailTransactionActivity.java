@@ -147,12 +147,16 @@ public class DetailTransactionActivity extends AppCompatActivity {
                 date=mDate.getText().toString();
                 montant=mMontant.getText().toString();
                 titre=mTitreTransaction.getText().toString();
+                payeur=mPayeur.getSelectedItem().toString();
                 ArrayList<Colaborator> liste=new ArrayList<Colaborator>();
-                for (String p:paye) {
-                    liste.add(new Colaborator(p));
+                for(int i=0;i<layout_list.getChildCount();i++){
+                    CheckBox box2 = (CheckBox) layout_list.getChildAt(i);
+                    if(box2.isChecked()){
+                        liste.add(new Colaborator(box2.getText().toString()));
+                    }
                 }
                 Transaction transaction =new Transaction(titre,Double.parseDouble(montant), Date.valueOf(date),new Colaborator(payeur),liste);
-                list_transaction.add(transaction);
+                MainActivity.add(transaction, TransactionGroupActivity.getId());
                 // The user just clicked
             }
         });

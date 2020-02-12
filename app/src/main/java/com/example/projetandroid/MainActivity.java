@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.list_group.add(group);
     }
 
+    public static void add(Transaction transaction, int k) {
+        MainActivity.list_group.get(k).setList_transaction(transaction);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Colaborator Clement = new Colaborator("clement");
