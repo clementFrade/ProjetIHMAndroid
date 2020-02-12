@@ -52,10 +52,9 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mMontant = (EditText) findViewById(R.id.TextMontant);
         mDate = (EditText) findViewById(R.id.editTextDate);
         mPayeur = (Spinner) findViewById(R.id.Payeur);
-        mPaye = (Spinner) findViewById(R.id.Payed);
         mPlayButton = (Button) findViewById(R.id.buttonValider);
         mPlayButton.setEnabled(false);
-        Spinner spin = (Spinner) findViewById(R.id.Payed);
+        Spinner spin = (Spinner) findViewById(R.id.Payeur);
         ArrayAdapter<String> adapter ;
         /*Colaborator Clement = new Colaborator("clement");
         Colaborator Lucas = new Colaborator("lucas");
@@ -87,17 +86,6 @@ public class DetailTransactionActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        mPaye.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                
             }
 
             @Override
