@@ -55,7 +55,7 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mPlayButton.setEnabled(false);
         Spinner spin = (Spinner) findViewById(R.id.Payed);
         ArrayAdapter<String> adapter ;
-
+/*
         liste_colaborator = TransactionGroupActivity.getGrp().getColaborators();
         for (Colaborator c:liste_colaborator) {
             paye.add(c.getName());
@@ -63,7 +63,7 @@ public class DetailTransactionActivity extends AppCompatActivity {
 
         adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,paye);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(adapter);
+        spin.setAdapter(adapter);*/
         mPayeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

@@ -2,15 +2,20 @@ package com.example.projetandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class TransactionGroupActivity extends AppCompatActivity {
     ArrayList<Transaction> list_trans;
+    ArrayList<Colaborator> list_colab;
 
     private static Group grp;
     public static Group getGrp() {
@@ -44,6 +49,23 @@ public class TransactionGroupActivity extends AppCompatActivity {
             layout_list.addView(list_button);
 
         }
+        Double total=Calcul.calculEquilibre(grp);
+        helloTextView.setText(total.toString());
+        list_colab=grp.getColaborators();
+        for (int i=0;i<list_colab.size();i++){
+            Button list_button = new Button(this);
+            list_button.setText(list_colab.get(i).getName().toString()+list_colab.get(i).getAmount().toString());
+            layout_list.addView(list_button);
+
+        }
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton4);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent detail = new Intent(TransactionGroupActivity.this, com.example.projetandroid.DetailTransactionActivity.class);
+                startActivity(detail);
+            }
+        });
        // transactions
     }
 }

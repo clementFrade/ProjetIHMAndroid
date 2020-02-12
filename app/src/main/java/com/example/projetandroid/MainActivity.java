@@ -51,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Colaborator Clement = new Colaborator("clement");
         Colaborator Lucas = new Colaborator("lucas");
+        Colaborator Thibaud = new Colaborator("thibaud");
         list_colabo.add(Clement);
         list_colabo.add(Lucas);
+        list_colabo.add(Thibaud);
         Date date = new Date(2019,10,12) ;
         Transaction test = new Transaction("test",10.0, date,Clement,list_colabo);
         Transaction test2 = new Transaction("test2",20.0, date,Clement,list_colabo);
