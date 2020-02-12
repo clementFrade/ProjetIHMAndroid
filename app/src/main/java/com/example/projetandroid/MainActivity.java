@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
 
     private ArrayList<Group> list_group = new ArrayList<Group>();
-    private ArrayList<String> list_colabo = new ArrayList<String>();
+    private ArrayList<Colaborator> list_colabo = new ArrayList<Colaborator>();
     //list_colabo.add
     //list_group.add(new Group("yolo","lulu",list_colabo));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        list_colabo.add("clement");
+        Colaborator Clement = new Colaborator("clement");
+        list_colabo.add(Clement);
         list_group.add(new Group("yolo","lulu",list_colabo));
         list_group.add(new Group("c'est parti","lulu",list_colabo));
         super.onCreate(savedInstanceState);

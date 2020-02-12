@@ -6,7 +6,7 @@ public class Group {
 
     private String name;
     private String user;
-    private ArrayList<String> colaborators;
+    private ArrayList<Colaborator> colaborators;
     private ArrayList<Transaction> list_transaction;
 
     public String getName() {
@@ -25,11 +25,11 @@ public class Group {
         this.user = user;
     }
 
-    public ArrayList<String> getColaborators() {
+    public ArrayList<Colaborator> getColaborators() {
         return colaborators;
     }
 
-    public void setColaborators(ArrayList<String> colaborators) {
+    public void setColaborators(ArrayList<Colaborator> colaborators) {
         this.colaborators = colaborators;
     }
 
@@ -41,8 +41,7 @@ public class Group {
         this.list_transaction = list_transaction;
     }
 
-    public Group(String name, String user, ArrayList<String> colaborators) {
-
+    public Group(String name, String user, ArrayList<Colaborator> colaborators) {
         this.name = name;
         this.user = user;
         this.colaborators = colaborators;
