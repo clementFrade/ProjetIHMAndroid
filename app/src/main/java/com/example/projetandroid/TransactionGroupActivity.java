@@ -64,7 +64,7 @@ public class TransactionGroupActivity extends AppCompatActivity {
         list_colab=grp.getColaborators();
         for (int i=0;i<list_colab.size();i++){
             Button list_button = new Button(this);
-            list_button.setText(list_colab.get(i).getName().toString()+list_colab.get(i).getAmount().toString());
+            list_button.setText(list_colab.get(i).getName().toString()+" "+list_colab.get(i).getAmount().toString());
             layout_list.addView(list_button);
 
         }
