@@ -47,4 +47,11 @@ public class Group {
         this.colaborators = colaborators;
         this.list_transaction = new ArrayList<Transaction>();
     }
+
+    public Group(String name, String user, ArrayList<Colaborator> colaborators, ArrayList<Transaction> list_transaction) {
+        this.name = name;
+        this.user = user;
+        this.colaborators = colaborators;
+        this.list_transaction = list_transaction;
+    }
 }

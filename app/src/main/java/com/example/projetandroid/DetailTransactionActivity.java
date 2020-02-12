@@ -2,9 +2,6 @@ package com.example.projetandroid;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -12,9 +9,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import java.sql.Date;
@@ -35,6 +34,9 @@ public class DetailTransactionActivity extends AppCompatActivity {
     private String payeur;
     private ArrayList<String> paye;
     private ArrayList<Transaction>list_transaction;
+    private ArrayList<Colaborator>liste_colaborator;
+    private ArrayList<String> payer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +50,20 @@ public class DetailTransactionActivity extends AppCompatActivity {
         mMontant = (EditText) findViewById(R.id.TextMontant);
         mDate = (EditText) findViewById(R.id.editTextDate);
         mPayeur = (Spinner) findViewById(R.id.Payeur);
-        mPaye = (Spinner) findViewById(R.id.Payé);
+        mPaye = (Spinner) findViewById(R.id.Payed);
         mPlayButton = (Button) findViewById(R.id.buttonValider);
         mPlayButton.setEnabled(false);
+        Spinner spin = (Spinner) findViewById(R.id.Payed);
+        ArrayAdapter<String> adapter ;
+
+        liste_colaborator = TransactionGroupActivity.getGrp().getColaborators();
+        for (Colaborator c:liste_colaborator) {
+            paye.add(c.getName());
+        }
+
+        adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item,paye);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter);
         mPayeur.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -127,7 +140,11 @@ public class DetailTransactionActivity extends AppCompatActivity {
                 date=mDate.getText().toString();
                 montant=mMontant.getText().toString();
                 titre=mTitreTransaction.getText().toString();
-                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), Date.valueOf(date),payeur,paye);
+                ArrayList<Colaborator> liste=new ArrayList<Colaborator>();
+                for (String p:paye) {
+                    liste.add(new Colaborator(p));
+                }
+                Transaction transaction =new Transaction(titre,Double.parseDouble(montant), Date.valueOf(date),new Colaborator(payeur),liste);
                 list_transaction.add(transaction);
                 // The user just clicked
             }

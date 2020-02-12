@@ -102,7 +102,7 @@
             android:textSize="18sp" />
 
         <Spinner
-            android:id="@+id/Payé"
+            android:id="@+id/Payed"
             android:layout_width="395dp"
             android:layout_height="wrap_content"
             android:hint="Pour qui" />

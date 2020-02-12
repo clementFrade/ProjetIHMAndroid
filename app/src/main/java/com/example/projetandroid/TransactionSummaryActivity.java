@@ -15,6 +15,7 @@ public class TransactionSummaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String name = MainActivity.getText();
         setContentView(R.layout.activity_transaction_summary);
         //SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
        // ViewPager viewPager = findViewById(R.id.view_pager);

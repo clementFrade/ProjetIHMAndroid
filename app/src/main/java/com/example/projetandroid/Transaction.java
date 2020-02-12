@@ -7,10 +7,10 @@ public class Transaction {
     private String tittle;
     private Double amount;
     private Date date;
-    private String payBy;
-    private ArrayList<String> payFor;
+    private Colaborator payBy;
+    private ArrayList<Colaborator> payFor;
 
-    public Transaction(String tittle, Double amount, Date date, String payBy, ArrayList<String> payFor) {
+    public Transaction(String tittle, Double amount, Date date, Colaborator payBy, ArrayList<Colaborator> payFor) {
         this.tittle = tittle;
         this.amount = amount;
         this.date = date;
@@ -30,11 +30,11 @@ public class Transaction {
         this.date = date;
     }
 
-    public void setPayBy(String payBy) {
+    public void setPayBy(Colaborator payBy) {
         this.payBy = payBy;
     }
 
-    public void setPayFor(ArrayList<String> payFor) {
+    public void setPayFor(ArrayList<Colaborator> payFor) {
         this.payFor = payFor;
     }
 
@@ -50,11 +50,11 @@ public class Transaction {
         return date;
     }
 
-    public String getPayBy() {
+    public Colaborator getPayBy() {
         return payBy;
     }
 
-    public ArrayList<String> getPayFor() {
+    public ArrayList<Colaborator> getPayFor() {
         return payFor;
     }
 }
