@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         return list_group;
     }
 
+    public static void setList_group(Group group) {
+        MainActivity.list_group.add(group);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Colaborator Clement = new Colaborator("clement");
@@ -60,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         Transaction test2 = new Transaction("test2",20.0, date,Clement,list_colabo);
         liste_transaction.add(test);
         liste_transaction.add(test2);
-        list_group.add(new Group("yolo","lulu",list_colabo,liste_transaction));
-        list_group.add(new Group("c'est parti","lulu",list_colabo));
+        list_group.add(new Group("yolo","lulu","eur",list_colabo,liste_transaction));
+        list_group.add(new Group("c'est parti","lulu","eur",list_colabo));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
