@@ -12,7 +12,9 @@
         <activity android:name=".TransactionGroupActivity"></activity>
         <activity
             android:name=".CreatingGroup"
-            android:label="@string/title_activity_creating_group"></activity>
+            android:label="@string/title_activity_creating_group"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <activity
             android:name=".EquilibreActivity"
             android:label="@string/title_activity_equilibre"
